@@ -1,0 +1,227 @@
+operable program or batch file.
+PYTHON=
+COMMANDLINE_ARGS= --xformers --api --precision full --no-half --skip-torch-cuda-test
+venv "venv\Scripts\Python.exe"
+Launching launch.py script...
+Command-line arguments:
+['launch.py', '--xformers', '--api', '--precision', 'full', '--no-half', '--skip-torch-cuda-test']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: True
+Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)]
+Version: v1.8.0
+Commit hash: bef51aed032c0aaa5cfd80445bc4cf0d85b408b5
+Installing xformers
+Installing requirements
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\adetailer\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\Auto-Photoshop-StableDiffusion-Plugin\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+[Auto-Photoshop-SD] Attempting auto-update...
+[Auto-Photoshop-SD] switch branch to extension branch.
+checkout_result: Your branch is up to date with 'origin/master'.
+
+[Auto-Photoshop-SD] Current Branch.
+branch_result: * master
+
+[Auto-Photoshop-SD] Fetch upstream.
+fetch_result:
+[Auto-Photoshop-SD] Pull upstream.
+pull_result: Already up to date.
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\deforum-for-automatic1111-webui\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+*** Error running install.py for extension C:\git\sdxl\stable-diffusion-webui\extensions\sd-wav2lip-uhq.
+*** Command: "C:\git\sdxl\stable-diffusion-webui\venv\Scripts\python.exe" "C:\git\sdxl\stable-diffusion-webui\extensions\sd-wav2lip-uhq\install.py"
+*** Error code: 1
+*** stdout: Command-line arguments:
+*** ['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-wav2lip-uhq\\install.py']
+*** PyTorch version: 2.2.2+cpu
+*** CUDA available: False
+*** --skip-torch-cuda-test flag present: False
+*** Installing wav2lip_uhq requirement: librosa==0.10.0.post2
+*** Installing wav2lip_uhq requirement: git+https://github.com/suno-ai/bark.git
+*** Installing wav2lip_uhq requirement: insightface==0.7.3
+*** Installing wav2lip_uhq requirement: onnx==1.14.0
+*** Installing wav2lip_uhq requirement: onnxruntime==1.15.0
+*** Installing wav2lip_uhq requirement: onnxruntime-gpu==1.15.0
+*** Installing wav2lip_uhq requirement: opencv-python>=4.8.0
+***
+*** stderr: Traceback (most recent call last):
+***   File "C:\git\sdxl\stable-diffusion-webui\extensions\sd-wav2lip-uhq\install.py", line 17, in <module>
+***     launch.run_pip(f"install {lib}", f"wav2lip_uhq requirement: {lib}")
+***   File "C:\git\sdxl\stable-diffusion-webui\modules\launch_utils.py", line 143, in run_pip
+***     return run(f'"{python}" -m pip {command} --prefer-binary{index_url_line}', desc=f"Installing {desc}", errdesc=f"Couldn't install {desc}", live=live)
+***   File "C:\git\sdxl\stable-diffusion-webui\modules\launch_utils.py", line 115, in run
+***     raise RuntimeError("\n".join(error_bits))
+*** RuntimeError: Couldn't install wav2lip_uhq requirement: opencv-python>=4.8.0.
+*** Command: "C:\git\sdxl\stable-diffusion-webui\venv\Scripts\python.exe" -m pip install opencv-python>=4.8.0 --prefer-binary
+*** Error code: 3221225477
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-webui-controlnet\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-webui-EasyPhoto\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+is_installed check for tensorflow-cpu failed as 'spec is None'
+Installing requirements for easyphoto-webui
+Installing requirements for tensorflow
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-webui-mov2mov\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+*** Error running install.py for extension C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-prompt-all-in-one.
+*** Command: "C:\git\sdxl\stable-diffusion-webui\venv\Scripts\python.exe" "C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-prompt-all-in-one\install.py"
+*** Error code: 1
+*** stdout: Command-line arguments:
+*** ['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-webui-prompt-all-in-one\\install.py']
+***
+*** stderr: Traceback (most recent call last):
+***   File "C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-prompt-all-in-one\install.py", line 1, in <module>
+***     import launch
+***   File "C:\git\sdxl\stable-diffusion-webui\launch.py", line 4, in <module>
+***     import torch
+***   File "C:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages\torch\__init__.py", line 130, in <module>
+***     raise err
+*** OSError: [WinError 1114] A dynamic link library (DLL) initialization routine failed. Error loading "C:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages\torch\lib\shm.dll" or one of its dependencies.
+*** Error running install.py for extension C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-roop.
+*** Command: "C:\git\sdxl\stable-diffusion-webui\venv\Scripts\python.exe" "C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-roop\install.py"
+*** Error code: 1
+*** stdout: Collecting insightface==0.7.3 (from -r C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-roop\requirements.txt (line 1))
+***   Using cached insightface-0.7.3.tar.gz (439 kB)
+***   Installing build dependencies: started
+***   Installing build dependencies: finished with status 'done'
+***   Getting requirements to build wheel: started
+***   Getting requirements to build wheel: finished with status 'done'
+***   Installing backend dependencies: started
+***   Installing backend dependencies: finished with status 'error'
+***
+*** stderr:   error: subprocess-exited-with-error
+***
+***   pip subprocess to install backend dependencies did not run successfully.
+***   exit code: 3221225477
+***
+***   [3 lines of output]
+***   Collecting wheel
+***     Using cached wheel-0.43.0-py3-none-any.whl.metadata (2.2 kB)
+***   Using cached wheel-0.43.0-py3-none-any.whl (65 kB)
+***   [end of output]
+***
+***   note: This error originates from a subprocess, and is likely not a problem with pip.
+*** error: subprocess-exited-with-error
+***
+*** pip subprocess to install backend dependencies did not run successfully.
+*** exit code: 3221225477
+***
+*** See above for output.
+***
+*** note: This error originates from a subprocess, and is likely not a problem with pip.
+*** Traceback (most recent call last):
+***   File "C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-roop\install.py", line 27, in <module>
+***     subprocess.run(["pip", "install", "-r", req_file], check=True)
+***   File "C:\Users\Steven\AppData\Local\Programs\Python\Python310\lib\subprocess.py", line 524, in run
+***     raise CalledProcessError(retcode, process.args,
+*** subprocess.CalledProcessError: Command '['pip', 'install', '-r', 'C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-webui-roop\\requirements.txt']' returned non-zero exit status 1.
+***
+*** During handling of the above exception, another exception occurred:
+***
+*** Traceback (most recent call last):
+***   File "C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-roop\install.py", line 29, in <module>
+***     print(f"Failed to install requirements: {e.stderr.decode('utf-8')}")
+*** AttributeError: 'NoneType' object has no attribute 'decode'
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\sd-webui-segment-anything\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+Command-line arguments:
+['C:\\git\\sdxl\\stable-diffusion-webui\\extensions\\stable-diffusion-webui-images-browser\\install.py']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: False
+Launching Web UI with arguments: --xformers --api --precision full --no-half --skip-torch-cuda-test --xformers --api --precision full --no-half --skip-torch-cuda-test
+2024-03-30 20:47:59.405188: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-03-30 20:48:00.335915: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:xformers:WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+    PyTorch 2.1.2+cu121 with CUDA 1201 (you have 2.2.2+cpu)
+    Python  3.10.11 (you have 3.10.6)
+  Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+  Memory-efficient attention, SwiGLU, sparse and more won't be available.
+  Set XFORMERS_MORE_DETAILS=1 for more details
+Command-line arguments:
+['launch.py', '--xformers', '--api', '--precision', 'full', '--no-half', '--skip-torch-cuda-test', '--xformers', '--api', '--precision', 'full', '--no-half', '--skip-torch-cuda-test']
+PyTorch version: 2.2.2+cpu
+CUDA available: False
+--skip-torch-cuda-test flag present: True
+Warning: caught exception 'Torch not compiled with CUDA enabled', memory monitor disabled
+python_server_full_path:  C:\git\sdxl\stable-diffusion-webui\extensions\Auto-Photoshop-StableDiffusion-Plugin\server/python_server
+[-] ADetailer initialized. version: 24.1.2, num models: 9
+2024-03-30 20:48:05,076 - modelscope - INFO - PyTorch version 2.2.2 Found.
+2024-03-30 20:48:05,077 - modelscope - INFO - TensorFlow version 2.16.1 Found.
+2024-03-30 20:48:05,077 - modelscope - INFO - Loading ast index from C:\Users\Steven\.cache\modelscope\ast_indexer
+2024-03-30 20:48:05,206 - modelscope - INFO - Loading done! Current index file version is 1.9.3, with md5 fea81003da89f237ec72480cfc25c0a0 and a total number of 943 components indexed
+2024-03-30 20:48:05,829 - EasyPhoto - Import LoraCtlScript from sd-webui-loractl since the plugin already exists and is enabled.
+[AddNet] Updating model hashes...
+0it [00:00, ?it/s]
+[AddNet] Updating model hashes...
+0it [00:00, ?it/s]
+ControlNet preprocessor location: C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-controlnet\annotator\downloads
+2024-03-30 20:48:06,185 - ControlNet - INFO - ControlNet v1.1.440
+2024-03-30 20:48:06,285 - ControlNet - INFO - ControlNet v1.1.440
+sd-webui-prompt-all-in-one background API service started successfully.
+*** Error loading script: api.py
+    Traceback (most recent call last):
+      File "C:\git\sdxl\stable-diffusion-webui\modules\scripts.py", line 527, in load_scripts
+        script_module = script_loading.load_module(scriptfile.path)
+      File "C:\git\sdxl\stable-diffusion-webui\modules\script_loading.py", line 10, in load_module
+        module_spec.loader.exec_module(module)
+      File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+      File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+      File "C:\git\sdxl\stable-diffusion-webui\extensions\sd-webui-roop\scripts\api.py", line 17, in <module>
+        from scripts.faceswap import get_models
+    ImportError: cannot import name 'get_models' from 'scripts.faceswap' (unknown location)
+
+---
+2024-03-30 20:48:06,465 - roop - INFO - roop v0.0.2
+2024-03-30 20:48:06,466 - roop - INFO - roop v0.0.2
+Loading weights [0f1b80cfe8] from C:\git\sdxl\stable-diffusion-webui\models\Stable-diffusion\dreamshaperXL10_alpha2Xl10.safetensors
+2024-03-30 20:48:18,204 - AnimateDiff - INFO - Injecting LCM to UI.
+AnimateDiffScript init
+AnimateDiffScript init
+2024-03-30 20:48:18,477 - AnimateDiff - INFO - Hacking i2i-batch.
+2024-03-30 20:48:18,510 - ControlNet - INFO - ControlNet UI callback registered.
+*Deforum ControlNet support: enabled*
+*** Error executing callback ui_tabs_callback for C:\git\sdxl\stable-diffusion-webui\extensions\deforum-for-automatic1111-webui\scripts\deforum.py
+    Traceback (most recent call last):
+      File "C:\git\sdxl\stable-diffusion-webui\modules\script_callbacks.py", line 180, in ui_tabs_callback
+        res += c.callback() or []
+      File "C:\git\sdxl\stable-diffusion-webui\extensions\deforum-for-automatic1111-webui\scripts\deforum_helpers\ui_right.py", line 92, in on_ui_tabs
+        deforum_gallery, generation_info, html_info, _ = create_output_panel("deforum", opts.outdir_img2img_samples)
+    TypeError: cannot unpack non-iterable OutputPanel object
+
+---
+Creating model from config: C:\git\sdxl\stable-diffusion-webui\repositories\generative-models\configs\inference\sd_xl_base.yaml
+AnimateDiffScript init
+2024-03-30 20:48:20,412 - AnimateDiff - INFO - Hacking i2i-batch is already done.
+Running on local URL:  http://127.0.0.1:7860
+
+To create a public link, set `share=True` in `launch()`.
+2024-03-30 20:48:24,219 - AnimateDiff - INFO - Hacking i2i-batch is already done.
+2024-03-30 20:48:24,226 - AnimateDiff - INFO - Hacking i2i-batch is already done.
+Startup time: 76.0s (prepare environment: 45.2s, import torch: 2.3s, import gradio: 0.9s, setup paths: 3.9s, initialize shared: 0.1s, other imports: 0.5s, load scripts: 15.0s, create ui: 2.5s, gradio launch: 3.0s, add APIs: 0.6s, app_started_callback: 1.8s).
+Loading VAE weights specified in settings: C:\git\sdxl\stable-diffusion-webui\models\VAE\sdxl_vae.safetensors
+Applying attention optimization: InvokeAI... done.
+Model loaded in 23.4s (load weights from disk: 0.9s, create model: 0.7s, apply weights to model: 16.9s, apply float(): 4.0s, load VAE: 0.5s, calculate empty prompt: 0.3s).

@@ -1,0 +1,2 @@
+Requirement already satisfied: opencv-python in c:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages (4.9.0.80)
+Requirement already satisfied: numpy>=1.21.2 in c:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages (from opencv-python) (1.26.2)

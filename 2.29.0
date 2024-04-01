@@ -1,0 +1,4 @@
+Requirement already satisfied: imageio[pyav] in c:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages (2.31.2)
+Requirement already satisfied: numpy in c:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages (from imageio[pyav]) (1.23.5)
+Requirement already satisfied: pillow>=8.3.2 in c:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages (from imageio[pyav]) (9.5.0)
+Requirement already satisfied: av in c:\git\sdxl\stable-diffusion-webui\venv\lib\site-packages (from imageio[pyav]) (10.0.0)
