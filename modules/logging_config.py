@@ -1,58 +1,41 @@
-import logging
 import os
+import logging
 
 try:
-    from tqdm import tqdm
-
+    from tqdm.auto import tqdm
 
     class TqdmLoggingHandler(logging.Handler):
-        def __init__(self, fallback_handler: logging.Handler):
-            super().__init__()
-            self.fallback_handler = fallback_handler
+        def __init__(self, level=logging.INFO):
+            super().__init__(level)
 
         def emit(self, record):
             try:
-                # If there are active tqdm progress bars,
-                # attempt to not interfere with them.
-                if tqdm._instances:
-                    tqdm.write(self.format(record))
-                else:
-                    self.fallback_handler.emit(record)
+                msg = self.format(record)
+                tqdm.write(msg)
+                self.flush()
             except Exception:
-                self.fallback_handler.emit(record)
+                self.handleError(record)
 
+    TQDM_IMPORTED = True
 except ImportError:
-    TqdmLoggingHandler = None
-
+    # tqdm does not exist before first launch
+    # I will import once the UI finishes seting up the enviroment and reloads.
+    TQDM_IMPORTED = False
 
 def setup_logging(loglevel):
     if loglevel is None:
         loglevel = os.environ.get("SD_WEBUI_LOG_LEVEL")
 
-    if not loglevel:
-        return
+    loghandlers = []
 
-    if logging.root.handlers:
-        # Already configured, do not interfere
-        return
+    if TQDM_IMPORTED:
+        loghandlers.append(TqdmLoggingHandler())
 
-    formatter = logging.Formatter(
-        '%(asctime)s %(levelname)s [%(name)s] %(message)s',
-        '%Y-%m-%d %H:%M:%S',
-    )
-
-    if os.environ.get("SD_WEBUI_RICH_LOG"):
-        from rich.logging import RichHandler
-        handler = RichHandler()
-    else:
-        handler = logging.StreamHandler()
-        handler.setFormatter(formatter)
-
-    if TqdmLoggingHandler:
-        handler = TqdmLoggingHandler(handler)
-
-    handler.setFormatter(formatter)
-
-    log_level = getattr(logging, loglevel.upper(), None) or logging.INFO
-    logging.root.setLevel(log_level)
-    logging.root.addHandler(handler)
+    if loglevel:
+        log_level = getattr(logging, loglevel.upper(), None) or logging.INFO
+        logging.basicConfig(
+            level=log_level,
+            format='%(asctime)s %(levelname)s [%(name)s] %(message)s',
+            datefmt='%Y-%m-%d %H:%M:%S',
+            handlers=loghandlers
+        )

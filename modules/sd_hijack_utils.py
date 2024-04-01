@@ -11,14 +11,10 @@ class CondFunc:
                     break
                 except ImportError:
                     pass
-            try:
-                for attr_name in func_path[i:-1]:
-                    resolved_obj = getattr(resolved_obj, attr_name)
-                orig_func = getattr(resolved_obj, func_path[-1])
-                setattr(resolved_obj, func_path[-1], lambda *args, **kwargs: self(*args, **kwargs))
-            except AttributeError:
-                print(f"Warning: Failed to resolve {orig_func} for CondFunc hijack")
-                pass
+            for attr_name in func_path[i:-1]:
+                resolved_obj = getattr(resolved_obj, attr_name)
+            orig_func = getattr(resolved_obj, func_path[-1])
+            setattr(resolved_obj, func_path[-1], lambda *args, **kwargs: self(*args, **kwargs))
         self.__init__(orig_func, sub_func, cond_func)
         return lambda *args, **kwargs: self(*args, **kwargs)
     def __init__(self, orig_func, sub_func, cond_func):

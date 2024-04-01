@@ -32,12 +32,11 @@ class ExtensionMetadata:
         self.config = configparser.ConfigParser()
 
         filepath = os.path.join(path, self.filename)
-        # `self.config.read()` will quietly swallow OSErrors (which FileNotFoundError is),
-        # so no need to check whether the file exists beforehand.
-        try:
-            self.config.read(filepath)
-        except Exception:
-            errors.report(f"Error reading {self.filename} for extension {canonical_name}.", exc_info=True)
+        if os.path.isfile(filepath):
+            try:
+                self.config.read(filepath)
+            except Exception:
+                errors.report(f"Error reading {self.filename} for extension {canonical_name}.", exc_info=True)
 
         self.canonical_name = self.config.get("Extension", "Name", fallback=canonical_name)
         self.canonical_name = canonical_name.lower().strip()
@@ -224,16 +223,13 @@ def list_extensions():
 
     # check for requirements
     for extension in extensions:
-        if not extension.enabled:
-            continue
-
         for req in extension.metadata.requires:
             required_extension = loaded_extensions.get(req)
             if required_extension is None:
                 errors.report(f'Extension "{extension.name}" requires "{req}" which is not installed.', exc_info=False)
                 continue
 
-            if not required_extension.enabled:
+            if not extension.enabled:
                 errors.report(f'Extension "{extension.name}" requires "{required_extension.name}" which is disabled.', exc_info=False)
                 continue
 

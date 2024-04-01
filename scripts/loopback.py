@@ -95,7 +95,7 @@ class Script(scripts.Script):
                 processed = processing.process_images(p)
 
                 # Generation cancelled.
-                if state.interrupted or state.stopping_generation:
+                if state.interrupted:
                     break
 
                 if initial_seed is None:
@@ -122,8 +122,8 @@ class Script(scripts.Script):
 
             p.inpainting_fill = original_inpainting_fill
 
-            if state.interrupted or state.stopping_generation:
-                break
+            if state.interrupted:
+                    break
 
         if len(history) > 1:
             grid = images.image_grid(history, rows=1)

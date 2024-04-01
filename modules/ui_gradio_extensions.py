@@ -1,12 +1,17 @@
 import os
 import gradio as gr
 
-from modules import localization, shared, scripts, util
-from modules.paths import script_path, data_path
+from modules import localization, shared, scripts
+from modules.paths import script_path, data_path, cwd
 
 
 def webpath(fn):
-    return f'file={util.truncate_path(fn)}?{os.path.getmtime(fn)}'
+    if fn.startswith(cwd):
+        web_path = os.path.relpath(fn, cwd)
+    else:
+        web_path = os.path.abspath(fn)
+
+    return f'file={web_path}?{os.path.getmtime(fn)}'
 
 
 def javascript_html():
@@ -35,11 +40,13 @@ def css_html():
         return f'<link rel="stylesheet" property="stylesheet" href="{webpath(fn)}">'
 
     for cssfile in scripts.list_files_with_name("style.css"):
+        if not os.path.isfile(cssfile):
+            continue
+
         head += stylesheet(cssfile)
 
-    user_css = os.path.join(data_path, "user.css")
-    if os.path.exists(user_css):
-        head += stylesheet(user_css)
+    if os.path.exists(os.path.join(data_path, "user.css")):
+        head += stylesheet(os.path.join(data_path, "user.css"))
 
     return head
 

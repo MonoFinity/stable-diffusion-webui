@@ -45,15 +45,8 @@ function formatTime(secs) {
     }
 }
 
-
-var originalAppTitle = undefined;
-
-onUiLoaded(function() {
-    originalAppTitle = document.title;
-});
-
 function setTitle(progress) {
-    var title = originalAppTitle;
+    var title = 'Stable Diffusion';
 
     if (opts.show_progress_in_title && progress) {
         title = '[' + progress.trim() + '] ' + title;

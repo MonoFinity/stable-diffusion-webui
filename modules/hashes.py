@@ -21,10 +21,7 @@ def calculate_sha256(filename):
 
 def sha256_from_cache(filename, title, use_addnet_hash=False):
     hashes = cache("hashes-addnet") if use_addnet_hash else cache("hashes")
-    try:
-        ondisk_mtime = os.path.getmtime(filename)
-    except FileNotFoundError:
-        return None
+    ondisk_mtime = os.path.getmtime(filename)
 
     if title not in hashes:
         return None

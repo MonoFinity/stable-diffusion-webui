@@ -7,7 +7,7 @@ from modules.textual_inversion import autocrop
 
 class ScriptPostprocessingFocalCrop(scripts_postprocessing.ScriptPostprocessing):
     name = "Auto focal point crop"
-    order = 4010
+    order = 4000
 
     def ui(self):
         with ui_components.InputAccordion(False, label="Auto focal point crop") as enable:

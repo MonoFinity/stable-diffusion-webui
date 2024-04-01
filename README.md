@@ -1,5 +1,5 @@
 # Stable Diffusion web UI
-A web interface for Stable Diffusion, implemented using Gradio library.
+A browser interface based on Gradio library for Stable Diffusion.
 
 ![](screenshot.png)
 
@@ -151,12 +151,11 @@ Licenses for borrowed code can be found in `Settings -> Licenses` screen, and al
 
 - Stable Diffusion - https://github.com/Stability-AI/stablediffusion, https://github.com/CompVis/taming-transformers
 - k-diffusion - https://github.com/crowsonkb/k-diffusion.git
-- Spandrel - https://github.com/chaiNNer-org/spandrel implementing
-  - GFPGAN - https://github.com/TencentARC/GFPGAN.git
-  - CodeFormer - https://github.com/sczhou/CodeFormer
-  - ESRGAN - https://github.com/xinntao/ESRGAN
-  - SwinIR - https://github.com/JingyunLiang/SwinIR
-  - Swin2SR - https://github.com/mv-lab/swin2sr
+- GFPGAN - https://github.com/TencentARC/GFPGAN.git
+- CodeFormer - https://github.com/sczhou/CodeFormer
+- ESRGAN - https://github.com/xinntao/ESRGAN
+- SwinIR - https://github.com/JingyunLiang/SwinIR
+- Swin2SR - https://github.com/mv-lab/swin2sr
 - LDSR - https://github.com/Hafiidz/latent-diffusion
 - MiDaS - https://github.com/isl-org/MiDaS
 - Ideas for optimizations - https://github.com/basujindal/stable-diffusion

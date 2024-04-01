@@ -206,7 +206,7 @@ def parse_prompts(prompts):
     return res, extra_data
 
 
-def get_user_metadata(filename, lister=None):
+def get_user_metadata(filename):
     if filename is None:
         return {}
 
@@ -215,8 +215,7 @@ def get_user_metadata(filename, lister=None):
 
     metadata = {}
     try:
-        exists = lister.exists(metadata_filename) if lister else os.path.exists(metadata_filename)
-        if exists:
+        if os.path.isfile(metadata_filename):
             with open(metadata_filename, "r", encoding="utf8") as file:
                 metadata = json.load(file)
     except Exception as e:
